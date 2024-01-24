@@ -4,39 +4,25 @@
 
 class ResponseLogin {
   ResponseLogin({
-      num status, 
-      String message, 
-      Data data,}){
-    _status = status;
-    _message = message;
-    _data = data;
-}
+      this.status, 
+      this.message, 
+      this.data,});
 
   ResponseLogin.fromJson(dynamic json) {
-    _status = json['status'];
-    _message = json['message'];
-    _data = json['data'] != null ? Data.fromJson(json['data']) : null;
+    status = json['status'];
+    message = json['message'];
+    data = json['data'] != null ? DataLogin.fromJson(json['data']) : null;
   }
-  num _status;
-  String _message;
-  Data _data;
-ResponseLogin copyWith({  num status,
-  String message,
-  Data data,
-}) => ResponseLogin(  status: status ?? _status,
-  message: message ?? _message,
-  data: data ?? _data,
-);
-  num get status => _status;
-  String get message => _message;
-  Data get data => _data;
+  int? status;
+  String? message;
+  DataLogin? data;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['status'] = _status;
-    map['message'] = _message;
-    if (_data != null) {
-      map['data'] = _data.toJson();
+    map['status'] = status;
+    map['message'] = message;
+    if (data != null) {
+      map['data'] = data?.toJson();
     }
     return map;
   }
@@ -52,80 +38,46 @@ ResponseLogin copyWith({  num status,
 /// created_at : "2024-01-09T01:55:16.000000Z"
 /// updated_at : "2024-01-09T01:55:16.000000Z"
 
-class Data {
-  Data({
-      num id, 
-      String username, 
-      String nama, 
-      String telp, 
-      String alamat, 
-      String role, 
-      String createdAt, 
-      String updatedAt,}){
-    _id = id;
-    _username = username;
-    _nama = nama;
-    _telp = telp;
-    _alamat = alamat;
-    _role = role;
-    _createdAt = createdAt;
-    _updatedAt = updatedAt;
-}
+class DataLogin {
+  DataLogin({
+      this.id, 
+      this.username, 
+      this.nama, 
+      this.telp, 
+      this.alamat, 
+      this.role, 
+      this.createdAt, 
+      this.updatedAt,});
 
-  Data.fromJson(dynamic json) {
-    _id = json['id'];
-    _username = json['username'];
-    _nama = json['nama'];
-    _telp = json['telp'];
-    _alamat = json['alamat'];
-    _role = json['role'];
-    _createdAt = json['created_at'];
-    _updatedAt = json['updated_at'];
+  DataLogin.fromJson(dynamic json) {
+    id = json['id'];
+    username = json['username'];
+    nama = json['nama'];
+    telp = json['telp'];
+    alamat = json['alamat'];
+    role = json['role'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
   }
-  num _id;
-  String _username;
-  String _nama;
-  String _telp;
-  String _alamat;
-  String _role;
-  String _createdAt;
-  String _updatedAt;
-Data copyWith({  num id,
-  String username,
-  String nama,
-  String telp,
-  String alamat,
-  String role,
-  String createdAt,
-  String updatedAt,
-}) => Data(  id: id ?? _id,
-  username: username ?? _username,
-  nama: nama ?? _nama,
-  telp: telp ?? _telp,
-  alamat: alamat ?? _alamat,
-  role: role ?? _role,
-  createdAt: createdAt ?? _createdAt,
-  updatedAt: updatedAt ?? _updatedAt,
-);
-  num get id => _id;
-  String get username => _username;
-  String get nama => _nama;
-  String get telp => _telp;
-  String get alamat => _alamat;
-  String get role => _role;
-  String get createdAt => _createdAt;
-  String get updatedAt => _updatedAt;
+  int? id;
+  String? username;
+  String? nama;
+  String? telp;
+  String? alamat;
+  String? role;
+  String? createdAt;
+  String? updatedAt;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['id'] = _id;
-    map['username'] = _username;
-    map['nama'] = _nama;
-    map['telp'] = _telp;
-    map['alamat'] = _alamat;
-    map['role'] = _role;
-    map['created_at'] = _createdAt;
-    map['updated_at'] = _updatedAt;
+    map['id'] = id;
+    map['username'] = username;
+    map['nama'] = nama;
+    map['telp'] = telp;
+    map['alamat'] = alamat;
+    map['role'] = role;
+    map['created_at'] = createdAt;
+    map['updated_at'] = updatedAt;
     return map;
   }
 
